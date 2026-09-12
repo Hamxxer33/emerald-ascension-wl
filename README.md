@@ -30,7 +30,7 @@ Both required. Tap opens the URL in a new tab, then marks the task complete:
 1. **Follow @EmeraldAscen** → https://x.com/EmeraldAscen
 2. **Like, comment, repost, and turn on notifications** → https://x.com/EmeraldAscen (profile until a status post exists)
 
-After tasks, submit Robinhood username (+ optional X handle). Data stays on-device under `emerald-ascension.wl.v2`.
+After tasks, submit Robinhood wallet (`0x…`) + optional X handle. Data stays on-device under `emerald-ascension.wl.v3`.
 
 ## Brand assets
 
