@@ -29,4 +29,4 @@ export const TASKS: Task[] = [
   },
 ];
 
-export const STORAGE_KEY = "emerald-ascension.wl.v2";
+export const STORAGE_KEY = "emerald-ascension.wl.v3";
