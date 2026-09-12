@@ -4,7 +4,7 @@ import { BRAND, STORAGE_KEY, TASKS } from "./config";
 import "./App.css";
 
 type WlEntry = {
-  wallet: string;
+  robinhood: string;
   xHandle: string;
   tasks: Record<string, boolean>;
   submittedAt: string;
@@ -78,7 +78,7 @@ export default function App() {
   const [doneTasks, setDoneTasks] = useState<Record<string, boolean>>(
     () => existing?.tasks ?? {},
   );
-  const [wallet, setWallet] = useState(existing?.wallet ?? "");
+  const [robinhood, setRobinhood] = useState(existing?.robinhood ?? existing?.wallet ?? "");
   const [xHandle, setXHandle] = useState(existing?.xHandle ?? "");
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(Boolean(existing));
@@ -104,18 +104,18 @@ export default function App() {
       setError("Complete the required tasks first.");
       return;
     }
-    const trimmed = wallet.trim();
+    const trimmed = robinhood.trim().replace(/^@/, "");
     if (!trimmed) {
-      setError("Enter a wallet address.");
+      setError("Enter your Robinhood username.");
       return;
     }
-    if (trimmed.length < 20) {
-      setError("That wallet address looks too short.");
+    if (trimmed.length < 2) {
+      setError("That Robinhood username looks too short.");
       return;
     }
 
     const entry: WlEntry = {
-      wallet: trimmed,
+      robinhood: trimmed,
       xHandle: xHandle.trim().replace(/^@/, ""),
       tasks: { ...doneTasks },
       submittedAt: new Date().toISOString(),
@@ -128,7 +128,7 @@ export default function App() {
   function resetForm() {
     localStorage.removeItem(STORAGE_KEY);
     setSubmitted(false);
-    setWallet("");
+    setRobinhood("");
     setXHandle("");
     setDoneTasks({});
     setError("");
@@ -183,7 +183,7 @@ export default function App() {
             </div>
             <h2>You&apos;re on the list</h2>
             <p className="muted">
-              Whitelist entry saved on this device. Keep following{" "}
+              You&apos;re locked for 2222 Emerald on Robinhood. Keep following{" "}
               <a href={BRAND.xUrl} target="_blank" rel="noopener noreferrer">
                 {BRAND.handle}
               </a>{" "}
@@ -191,8 +191,8 @@ export default function App() {
             </p>
             <dl className="meta">
               <div>
-                <dt>Wallet</dt>
-                <dd className="mono">{wallet}</dd>
+                <dt>Robinhood</dt>
+                <dd>@{robinhood.replace(/^@/, "")}</dd>
               </div>
               {xHandle ? (
                 <div>
@@ -202,7 +202,7 @@ export default function App() {
               ) : null}
             </dl>
             <button type="button" className="btn ghost" onClick={resetForm}>
-              Submit another wallet
+              Submit another
             </button>
           </section>
         ) : (
@@ -264,18 +264,18 @@ export default function App() {
                 <h2>Join the whitelist</h2>
                 <p className="muted">
                   {requiredReady
-                    ? "Paste your wallet. X handle is optional."
+                    ? "Drop your Robinhood username. X handle is optional."
                     : "Finish the tasks above to unlock the form."}
                 </p>
               </div>
 
               <form className="form" onSubmit={onSubmit}>
                 <label className="field">
-                  <span>Wallet address</span>
+                  <span>Robinhood username</span>
                   <input
-                    value={wallet}
-                    onChange={(e) => setWallet(e.target.value)}
-                    placeholder="0x… or Solana address"
+                    value={robinhood}
+                    onChange={(e) => setRobinhood(e.target.value)}
+                    placeholder="@your_robinhood"
                     autoComplete="off"
                     spellCheck={false}
                     disabled={!requiredReady}
