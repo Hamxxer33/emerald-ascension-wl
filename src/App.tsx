@@ -104,13 +104,13 @@ export default function App() {
       setError("Complete the required tasks first.");
       return;
     }
-    const trimmed = robinhood.trim().replace(/^@/, "");
+    const trimmed = robinhood.trim();
     if (!trimmed) {
-      setError("Enter your Robinhood username.");
+      setError("Enter your Robinhood wallet.");
       return;
     }
-    if (trimmed.length < 2) {
-      setError("That Robinhood username looks too short.");
+    if (!/^0x[a-fA-F0-9]{40}$/.test(trimmed)) {
+      setError("That doesn't look like a Robinhood wallet. Use the 0x address.");
       return;
     }
 
@@ -191,8 +191,8 @@ export default function App() {
             </p>
             <dl className="meta">
               <div>
-                <dt>Robinhood</dt>
-                <dd>@{robinhood.replace(/^@/, "")}</dd>
+                <dt>Robinhood wallet</dt>
+                <dd>{robinhood}</dd>
               </div>
               {xHandle ? (
                 <div>
@@ -264,18 +264,18 @@ export default function App() {
                 <h2>Join the whitelist</h2>
                 <p className="muted">
                   {requiredReady
-                    ? "Drop your Robinhood username. X handle is optional."
+                    ? "Drop your Robinhood wallet. X handle is optional."
                     : "Finish the tasks above to unlock the form."}
                 </p>
               </div>
 
               <form className="form" onSubmit={onSubmit}>
                 <label className="field">
-                  <span>Robinhood username</span>
+                  <span>Robinhood wallet</span>
                   <input
                     value={robinhood}
                     onChange={(e) => setRobinhood(e.target.value)}
-                    placeholder="@your_robinhood"
+                    placeholder="0x…"
                     autoComplete="off"
                     spellCheck={false}
                     disabled={!requiredReady}
