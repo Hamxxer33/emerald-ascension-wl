@@ -78,7 +78,7 @@ export default function App() {
   const [doneTasks, setDoneTasks] = useState<Record<string, boolean>>(
     () => existing?.tasks ?? {},
   );
-  const [robinhood, setRobinhood] = useState(existing?.robinhood ?? existing?.wallet ?? "");
+  const [robinhood, setRobinhood] = useState(existing?.robinhood ?? "");
   const [xHandle, setXHandle] = useState(existing?.xHandle ?? "");
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(Boolean(existing));
