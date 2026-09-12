@@ -212,8 +212,7 @@ export default function App() {
                 <p className="step">1 · Tasks</p>
                 <h2>Complete required tasks</h2>
                 <p className="muted">
-                  Tap a task to open it, then it marks complete. Profile link
-                  until a status post is live.
+                  Tap a task to open it, then it marks complete.
                 </p>
               </div>
 

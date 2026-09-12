@@ -22,9 +22,9 @@ export const TASKS: Task[] = [
     required: true,
   },
   {
-    id: "engage",
+    id: "engage-2098795348852678947",
     label: "Like, comment, repost, and turn on notifications",
-    url: "https://x.com/EmeraldAscen",
+    url: "https://x.com/EmeraldAscen/status/2098795348852678947",
     required: true,
   },
 ];
