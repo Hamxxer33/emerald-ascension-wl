@@ -1,0 +1,58 @@
+:root {
+  --bg: #050806;
+  --bg-elevated: #0a120e;
+  --fg: #f4fff6;
+  --muted: #8aa892;
+  --faint: #4a6354;
+  --lime: #7cff6b;
+  --emerald: #00e676;
+  --gold: #f5d76e;
+  --cyan: #b8f0ff;
+  --glass: rgb(12 28 18 / 0.55);
+  --glass-border: rgb(124 255 107 / 0.18);
+  --ok: #7cff6b;
+  --danger: #ff6b7a;
+  --radius: 16px;
+  --font: "DM Sans", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgb(124 255 107 / 0.3);
+  color: var(--fg);
+}
