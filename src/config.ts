@@ -27,6 +27,12 @@ export const TASKS: Task[] = [
     url: "https://x.com/EmeraldAscen/status/2098795348852678947",
     required: true,
   },
+  {
+    id: "engage-2099410478212755610",
+    label: "Like, comment, and repost this post",
+    url: "https://x.com/EmeraldAscen/status/2099410478212755610",
+    required: true,
+  },
 ];
 
 export const STORAGE_KEY = "emerald-ascension.wl.v3";

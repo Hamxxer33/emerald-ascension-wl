@@ -25,10 +25,11 @@ npm run preview
 
 ## Tasks
 
-Both required. Tap opens the URL in a new tab, then marks the task complete:
+All required. Tap opens the URL in a new tab, then marks the task complete:
 
 1. **Follow @EmeraldAscen** → https://x.com/EmeraldAscen
 2. **Like, comment, repost, and turn on notifications** → https://x.com/EmeraldAscen/status/2098795348852678947
+3. **Like, comment, and repost this post** → https://x.com/EmeraldAscen/status/2099410478212755610
 
 After tasks, submit Robinhood wallet (`0x…`) + optional X handle. Data stays on-device under `emerald-ascension.wl.v3`.
 
